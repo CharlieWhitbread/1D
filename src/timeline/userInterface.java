@@ -41,7 +41,6 @@ public class userInterface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         header = new javax.swing.JPanel();
         rightPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -49,24 +48,12 @@ public class userInterface extends javax.swing.JFrame {
         tableControls = new javax.swing.JPanel();
         removeTask = new javax.swing.JButton();
         addNewTask = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        indentButton = new javax.swing.JButton();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 25, Short.MAX_VALUE)
-        );
+        importButton = new javax.swing.JButton();
+        generateButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TimeLine");
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(125, 140, 175));
         setMinimumSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
 
@@ -127,6 +114,7 @@ public class userInterface extends javax.swing.JFrame {
         mainTable.setAlignmentY(0.0F);
         mainTable.setBounds(new java.awt.Rectangle(0, 0, 640, 390));
         mainTable.setDragEnabled(true);
+        mainTable.setGridColor(new java.awt.Color(125, 140, 175));
         mainTable.setRowSelectionAllowed(false);
         mainTable.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -143,8 +131,11 @@ public class userInterface extends javax.swing.JFrame {
             mainTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
+        tableControls.setBackground(new java.awt.Color(125, 140, 175));
         tableControls.setPreferredSize(new java.awt.Dimension(640, 30));
 
+        removeTask.setBackground(new java.awt.Color(49, 70, 117));
+        removeTask.setForeground(new java.awt.Color(255, 255, 255));
         removeTask.setText("Remove Task");
         removeTask.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,6 +143,8 @@ public class userInterface extends javax.swing.JFrame {
             }
         });
 
+        addNewTask.setBackground(new java.awt.Color(49, 70, 117));
+        addNewTask.setForeground(new java.awt.Color(255, 255, 255));
         addNewTask.setText("Add New Task");
         addNewTask.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,17 +152,22 @@ public class userInterface extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Import");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        importButton.setBackground(new java.awt.Color(49, 70, 117));
+        importButton.setForeground(new java.awt.Color(255, 255, 255));
+        importButton.setText("Import");
+        importButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                importButtonActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Generate");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        generateButton.setBackground(new java.awt.Color(49, 70, 117));
+        generateButton.setForeground(new java.awt.Color(255, 255, 255));
+        generateButton.setText("Generate");
+        generateButton.setPreferredSize(new java.awt.Dimension(390, 29));
+        generateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                generateButtonActionPerformed(evt);
             }
         });
 
@@ -182,9 +180,10 @@ public class userInterface extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(addNewTask)
                 .addGap(0, 0, 0)
-                .addComponent(jButton2)
-                .addGap(0, 0, 0)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(importButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(generateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
         );
         tableControlsLayout.setVerticalGroup(
             tableControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,16 +192,9 @@ public class userInterface extends javax.swing.JFrame {
                 .addGroup(tableControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(removeTask)
                     .addComponent(addNewTask)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1)))
+                    .addComponent(importButton)
+                    .addComponent(generateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
-
-        indentButton.setText("Indent");
-        indentButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                indentButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -213,11 +205,8 @@ public class userInterface extends javax.swing.JFrame {
                     .addComponent(header, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(tableControls, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(indentButton))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tableControls, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, 0)
                         .addComponent(rightPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, 0))
@@ -229,12 +218,8 @@ public class userInterface extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tableControls, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(indentButton))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(rightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE)))
+                        .addComponent(tableControls, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -254,7 +239,7 @@ public class userInterface extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_removeTaskActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void importButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importButtonActionPerformed
         int count = 0;
         String name = "",start = "",end = "";
            
@@ -294,9 +279,9 @@ public class userInterface extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Error inporting from file." + e.getMessage());
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_importButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
         DefaultTableModel model = (DefaultTableModel) mainTable.getModel(); //Gets the model from the outputTable
         int rowCount = model.getRowCount();
         for (int i = 0; i<(rowCount-1);i++){     try {
@@ -318,7 +303,7 @@ public class userInterface extends javax.swing.JFrame {
         this.repaint();
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_generateButtonActionPerformed
 
     private void mainTableFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_mainTableFocusLost
 
@@ -337,13 +322,6 @@ public class userInterface extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_mainTableFocusGained
-
-    private void indentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indentButtonActionPerformed
-        DefaultTableModel tableModel = (DefaultTableModel) mainTable.getModel();
-        int selectedRow = mainTable.getSelectedRow();
-        TableEntry entry = listOfTasks.get(selectedRow-1);
-       
-    }//GEN-LAST:event_indentButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -382,11 +360,9 @@ public class userInterface extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addNewTask;
+    private javax.swing.JButton generateButton;
     private javax.swing.JPanel header;
-    private javax.swing.JButton indentButton;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton importButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable mainTable;
     private javax.swing.JButton removeTask;
