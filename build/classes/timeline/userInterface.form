@@ -52,15 +52,11 @@
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Component id="header" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="tableControls" min="-2" pref="417" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="indentButton" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jScrollPane1" min="-2" pref="640" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jScrollPane1" pref="640" max="32767" attributes="0"/>
+                          <Component id="tableControls" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="rightPanel" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -76,13 +72,9 @@
                   <Group type="102" attributes="0">
                       <Component id="jScrollPane1" min="-2" pref="590" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="tableControls" min="-2" max="-2" attributes="0"/>
-                          <Component id="indentButton" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="tableControls" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="rightPanel" pref="626" max="32767" attributes="0"/>
+                  <Component id="rightPanel" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -159,7 +151,8 @@
           <Properties>
             <Property name="autoCreateRowSorter" type="boolean" value="true"/>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="3" rowCount="1">
+              <Table columnCount="5" rowCount="1">
+                <Column editable="false" title="ID" type="java.lang.Integer"/>
                 <Column editable="true" title="Task Name" type="java.lang.String">
                   <Data value=""/>
                 </Column>
@@ -169,6 +162,7 @@
                 <Column editable="true" title="End Date" type="java.lang.String">
                   <Data value="01 01 2015"/>
                 </Column>
+                <Column editable="true" title="Completed" type="java.lang.Boolean"/>
               </Table>
             </Property>
             <Property name="alignmentX" type="float" value="0.0"/>
@@ -224,8 +218,7 @@
                   <Component id="addNewTask" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Component id="jButton1" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -237,7 +230,6 @@
                       <Component id="removeTask" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="addNewTask" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -268,23 +260,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Generate"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
-          </Events>
-        </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="indentButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Indent"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="indentButtonActionPerformed"/>
-      </Events>
-    </Component>
   </SubComponents>
 </Form>
